@@ -19,10 +19,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class AddClothesActivity : ComponentActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -33,6 +34,7 @@ class AddClothesActivity : ComponentActivity() {
     }
 }
 
+@Preview(device = "id:pixel_8")
 @Composable
 fun AddClothesScreen() {
     var description by remember { mutableStateOf("") }
@@ -56,8 +58,6 @@ fun AddClothesScreen() {
                     contentDescription = "Back"
                 )
             }
-            Spacer(modifier = Modifier.weight(1f))
-            Text(text = "12:30", fontSize = 14.sp)
         }
 
         // Placeholder for clothing icon

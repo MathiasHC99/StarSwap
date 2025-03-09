@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview(device = "id:pixel_8")
+@Preview(device = "id:pixel_8", showSystemUi = true, showBackground = true)
 @Composable
 fun AddClothesScreen() {
     var description by remember { mutableStateOf("") }
@@ -43,16 +43,16 @@ fun AddClothesScreen() {
     var selectedClothingType by remember { mutableStateOf<ClothingType?>(null) }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
+        modifier = Modifier.fillMaxSize().padding(24.dp),
+        verticalArrangement = Arrangement.SpaceBetween,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Top bar with back button
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(onClick = { /* Handle back navigation */ }) {
+            IconButton(onClick = { }) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Back"
